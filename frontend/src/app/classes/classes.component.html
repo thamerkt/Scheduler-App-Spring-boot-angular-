@@ -1,0 +1,41 @@
+<table class="table-auto w-full text-left border-collapse border border-gray-300">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="px-4 py-2 border border-gray-300">ID</th>
+      <th class="px-4 py-2 border border-gray-300">Name</th>
+      <th class="px-4 py-2 border border-gray-300">Number</th>
+      <th class="px-4 py-2 border border-gray-300">Section</th>
+      <th class="px-4 py-2 border border-gray-300">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let classe of classes" class="hover:bg-gray-100">
+      <td class="px-4 py-2 border border-gray-300">{{ classe.id }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ classe.name }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ classe.number }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ classe.section }}</td>
+      <td class="px-4 py-2 border border-gray-300">
+        <button *ngIf="classe.id !== undefined" (click)="deleteClasse(classe.id)">
+          <i class="fas fa-trash text-red-500 cursor-pointer"></i>
+        </button>
+        <i class="fas fa-edit text-red-500 ml-2 cursor-pointer"></i>
+      </td>
+    </tr>
+
+    <tr *ngIf="showAddClasseForm">
+      <td><input type="text" [(ngModel)]="newClasse.id" placeholder="Id" required /></td>
+
+      <td><input type="text" [(ngModel)]="newClasse.name" placeholder="Name" required /></td>
+      <td><input type="email" [(ngModel)]="newClasse.number" placeholder="Number" required /></td>
+      <td><input type="text" [(ngModel)]="newClasse.section" placeholder="Section" required /></td>
+      <td>
+        <button (click)="addClasse()" class="bg-green-400"><i class="fas fa-save text-red-500 ml-2 cursor-pointer"></i></button>
+        <button (click)="toggleAddClasseForm()" class="bg-red-400"><i class="fas fa-cancel text-red-500 ml-2 cursor-pointer"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="toggleAddClasseForm()" class="bg-blue-400">
+  <i class="fas fa-add text-blue-400 cursor-pointer"></i> Add Class
+</button>

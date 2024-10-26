@@ -1,0 +1,40 @@
+<table class="table-auto w-full text-left border-collapse border border-gray-300">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="px-4 py-2 border border-gray-300">ID</th>
+      <th class="px-4 py-2 border border-gray-300">Name</th>
+      <th class="px-4 py-2 border border-gray-300">Email</th>
+      <th class="px-4 py-2 border border-gray-300">Subject</th>
+      <th class="px-4 py-2 border border-gray-300">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let professor of professors" class="hover:bg-gray-100">
+      <td class="px-4 py-2 border border-gray-300">{{ professor.id }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ professor.name }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ professor.email }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ professor.subject }}</td>
+      <td class="px-4 py-2 border border-gray-300">
+        <button *ngIf="professor.id !== undefined" (click)="deleteProfessor(professor.id)">
+          <i class="fas fa-trash text-red-500 cursor-pointer"></i>
+        </button>
+        <i class="fas fa-edit text-red-500 ml-2 cursor-pointer"></i>
+      </td>
+    </tr>
+
+    <tr *ngIf="showAddProfessorForm">
+      <td><input type="text" [(ngModel)]="newProfessor.id" placeholder="Id" required /></td>
+      <td><input type="text" [(ngModel)]="newProfessor.name" placeholder="Name" required /></td>
+      <td><input type="email" [(ngModel)]="newProfessor.email" placeholder="Email" required /></td>
+      <td><input type="text" [(ngModel)]="newProfessor.subject" placeholder="Subject" required /></td>
+      <td>
+        <button (click)="addProfessor()" class="bg-green-400"><i class="fas fa-save text-red-500 ml-2 cursor-pointer "></i></button>
+        <button (click)="toggleAddProfessorForm()" class="bg-red-400"><i class="fas fa-cancel text-red-500 ml-2 cursor-pointer"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="toggleAddProfessorForm()" class="bg-blue-400">
+  <i class="fas fa-add text-blue-400 cursor-pointer"></i> Add Professor
+</button>

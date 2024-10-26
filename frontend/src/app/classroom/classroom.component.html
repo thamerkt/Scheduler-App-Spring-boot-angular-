@@ -1,0 +1,51 @@
+<table class="table-auto w-full text-left border-collapse border border-gray-300">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="px-4 py-2 border border-gray-300">ID</th>
+      <th class="px-4 py-2 border border-gray-300">Number</th>
+      <th class="px-4 py-2 border border-gray-300">Type</th>
+      <th class="px-4 py-2 border border-gray-300">Bloc</th>
+      <th class="px-4 py-2 border border-gray-300">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Existing classrooms -->
+    <tr *ngFor="let classroom of classrooms" class="hover:bg-gray-100">
+      <td class="px-4 py-2 border border-gray-300">{{ classroom.id }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ classroom.number }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ classroom.type }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ classroom.bloc }}</td>
+      <td class="px-4 py-2 border border-gray-300">
+        <!-- Delete button -->
+        <button *ngIf="classroom.id !== undefined" (click)="deleteClassroom(classroom.id)">
+          <i class="fas fa-trash text-red-500 cursor-pointer"></i>
+        </button>
+        <!-- Edit button (you can implement editing logic if necessary) -->
+        <i class="fas fa-edit text-blue-500 ml-2 cursor-pointer"></i>
+      </td>
+    </tr>
+
+    <!-- Form for adding a new classroom -->
+    <tr *ngIf="showAddClasseForm">
+      <td><input type="number" [(ngModel)]="newClassroom.id" placeholder="ID" required class="px-4 py-2 border border-gray-300" /></td>
+      <td><input type="number" [(ngModel)]="newClassroom.number" placeholder="Number" required class="px-4 py-2 border border-gray-300" /></td>
+      <td><input type="text" [(ngModel)]="newClassroom.type" placeholder="Type" required class="px-4 py-2 border border-gray-300" /></td>
+      <td><input type="text" [(ngModel)]="newClassroom.bloc" placeholder="Bloc" required class="px-4 py-2 border border-gray-300" /></td>
+      <td class="px-4 py-2 border border-gray-300">
+        <!-- Save button -->
+        <button (click)="addClassroom()" class="bg-green-400 px-2 py-1 rounded">
+          <i class="fas fa-save text-white"></i> Save
+        </button>
+        <!-- Cancel button -->
+        <button (click)="toggleAddClasseForm()" class="bg-red-400 px-2 py-1 rounded ml-2">
+          <i class="fas fa-times text-white"></i> Cancel
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Button to toggle the form for adding a new class -->
+<button (click)="toggleAddClasseForm()" class="bg-blue-400 text-white px-4 py-2 mt-4 rounded">
+  <i class="fas fa-plus"></i> Add Classroom
+</button>

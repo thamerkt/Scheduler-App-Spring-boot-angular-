@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Schedule</title>
+</head>
+<body class="flex">
+
+    <!-- Sidebar -->
+    <div class="w-64 h-screen bg-gray-800 text-white flex flex-col">
+        <div class="p-4 text-lg font-bold">My Schedule</div>
+        <nav class="flex-grow">
+            <ul>
+                <li class="hover:bg-gray-700">
+                    <a href="#" class="block p-4">Dashboard</a>
+                </li>
+                <li class="hover:bg-gray-700">
+                    <a href="#" class="block p-4">Professors</a>
+                </li>
+                <li class="hover:bg-gray-700">
+                    <a href="#" class="block p-4">Classes</a>
+                </li>
+                <li class="hover:bg-gray-700">
+                    <a href="#" class="block p-4">Events</a>
+                </li>
+                <li class="hover:bg-gray-700">
+                    <a href="#" class="block p-4">Settings</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="p-4">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="flex-grow p-6 bg-gray-100">
+      <router-outlet></router-outlet>
+    </div>
+
+</body>
+</html>
+
+
+
