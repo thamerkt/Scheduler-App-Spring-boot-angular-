@@ -1,0 +1,21 @@
+server:
+  port: 8084
+  error:
+    include-message: always
+
+spring:
+  security:
+    jwt:
+      secret-key: 3cfa76ef14937c1c0ea519f8fc057a80fcd04a7420f8e8bcd0a7567c272e007b
+      expiration-time: 3600000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: # Provide your MySQL password here
+    url: jdbc:mysql://localhost:3306/schedule_db
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
+
