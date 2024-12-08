@@ -10,7 +10,7 @@ import { Professor } from '../professor.model';
 export class ProfessorsComponent implements OnInit {
   professors: Professor[] = []; // List of professors
   showAddProfessorForm = false; // Property to track visibility of the form
-  newProfessor: Professor = { id: 0, name: '', email: '', subject: '' }; // Initialize with blank professor
+  newProfessor: Professor = { id: 0, name: '', email: '', subject: '',cin:'' }; // Initialize with blank professor
 
   constructor(private dataService: DataService) {}
 
@@ -66,6 +66,6 @@ export class ProfessorsComponent implements OnInit {
 
   private resetNewProfessor(): void {
     // Reset the newProfessor object to its initial state
-    this.newProfessor = { id: 0, name: '', email: '', subject: '' };
+    this.newProfessor = { id: 0, name: '', email: '', subject: '' ,cin:''};
   }
 }

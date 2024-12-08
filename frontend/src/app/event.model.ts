@@ -1,8 +1,14 @@
+import { Classe } from "./class.model";
+import { classroom } from "./classroom.module";
+import { Professor } from "./professor.model";
+
 export interface Event {
-    id?: number;
+    id: number;
     title: string;
     startDateTime: Date;
     endDateTime: Date;
-    professorid:number
+    professor:Professor;
+    classe:Classe;
+    classroom:classroom;
     
   }

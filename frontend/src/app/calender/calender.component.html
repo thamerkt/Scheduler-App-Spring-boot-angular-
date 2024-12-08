@@ -1,9 +1,25 @@
 <div>
-    <h2>Google Calendar Events</h2>
-    <ul>
-      <li *ngFor="let event of events">
-        {{ event.summary }} - {{ event.start.dateTime || event.start.date }}
-      </li>
-    </ul>
-  </div>
-  
+  <mwl-calendar-week-view
+    [viewDate]="viewDate"
+    [events]="events"
+    [locale]="'en'"
+    [hourSegments]="1"
+    [dayStartHour]="8"
+    [dayEndHour]="18"
+    (eventClicked)="handleEvent('Clicked', $event.event)">
+
+    <!-- Custom event template with drag-and-drop functionality -->
+    <ng-template #eventTemplate let-event="event">
+      <div
+        class="cal-event"
+        cdkDrag
+        [cdkDragData]="event"
+        (cdkDragMoved)="onDragMoved($event)"
+        (cdkDragEnded)="onDragEnded($event)">
+        <strong>{{ event.title }}</strong><br>
+        {{ event?.classroomNumber }}
+      </div>
+    </ng-template>
+
+  </mwl-calendar-week-view>
+</div>

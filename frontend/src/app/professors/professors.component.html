@@ -1,5 +1,5 @@
 <table class="table-auto w-full text-left border-collapse border border-gray-300">
-  <thead class="bg-gray-100">
+  <thead class="bg-gray-200">
     <tr>
       <th class="px-4 py-2 border border-gray-300">ID</th>
       <th class="px-4 py-2 border border-gray-300">Name</th>
@@ -15,26 +15,31 @@
       <td class="px-4 py-2 border border-gray-300">{{ professor.email }}</td>
       <td class="px-4 py-2 border border-gray-300">{{ professor.subject }}</td>
       <td class="px-4 py-2 border border-gray-300">
-        <button *ngIf="professor.id !== undefined" (click)="deleteProfessor(professor.id)">
-          <i class="fas fa-trash text-red-500 cursor-pointer"></i>
+        <button *ngIf="professor.id !== undefined" (click)="deleteProfessor(professor.id)" class="text-red-500">
+          <i class="fas fa-trash cursor-pointer"></i>
         </button>
-        <i class="fas fa-edit text-red-500 ml-2 cursor-pointer"></i>
+        <button class="text-blue-500 ml-2">
+          <i class="fas fa-edit cursor-pointer"></i>
+        </button>
       </td>
     </tr>
-
-    <tr *ngIf="showAddProfessorForm">
-      <td><input type="text" [(ngModel)]="newProfessor.id" placeholder="Id" required /></td>
-      <td><input type="text" [(ngModel)]="newProfessor.name" placeholder="Name" required /></td>
-      <td><input type="email" [(ngModel)]="newProfessor.email" placeholder="Email" required /></td>
-      <td><input type="text" [(ngModel)]="newProfessor.subject" placeholder="Subject" required /></td>
+    <tr *ngIf="showAddProfessorForm" class="bg-gray-100">
+      <td><input type="text" [(ngModel)]="newProfessor.id" placeholder="ID" required class="border p-1 w-full" /></td>
+      <td><input type="text" [(ngModel)]="newProfessor.name" placeholder="Name" required class="border p-1 w-full" /></td>
+      <td><input type="email" [(ngModel)]="newProfessor.email" placeholder="Email" required class="border p-1 w-full" /></td>
+      <td><input type="text" [(ngModel)]="newProfessor.subject" placeholder="Subject" required class="border p-1 w-full" /></td>
       <td>
-        <button (click)="addProfessor()" class="bg-green-400"><i class="fas fa-save text-red-500 ml-2 cursor-pointer "></i></button>
-        <button (click)="toggleAddProfessorForm()" class="bg-red-400"><i class="fas fa-cancel text-red-500 ml-2 cursor-pointer"></i></button>
+        <button (click)="addProfessor()" class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">
+          <i class="fas fa-save"></i> Save
+        </button>
+        <button (click)="toggleAddProfessorForm()" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 ml-2">
+          <i class="fas fa-times"></i> Cancel
+        </button>
       </td>
     </tr>
   </tbody>
 </table>
 
-<button (click)="toggleAddProfessorForm()" class="bg-blue-400">
-  <i class="fas fa-add text-blue-400 cursor-pointer"></i> Add Professor
+<button (click)="toggleAddProfessorForm()" class="bg-blue-500 text-white px-10 py-2 rounded hover:bg-blue-600 mt-4">
+  <i class="fas fa-plus"></i> Add Professor
 </button>

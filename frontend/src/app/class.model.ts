@@ -1,4 +1,4 @@
-export interface Class {
+export interface Classe {
     id?: number; // Optional for new classes
     name: string;
     number: number;

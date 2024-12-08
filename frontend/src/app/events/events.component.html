@@ -1,46 +1,70 @@
-<h2>Events</h2>
-<button (click)="toggleAddEventForm()" class="bg-blue-400">
-  <i class="fas fa-add text-blue-400 cursor-pointer"></i> Add Event
+<h2 class="text-xl font-bold mb-4">Events</h2>
+<button (click)="toggleAddEventForm()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+  <i class="fas fa-plus"></i> Add Event
 </button>
 
-<table class="table-auto w-full text-left border-collapse border border-gray-300">
-  <thead class="bg-gray-100">
+<table class="table-auto w-full text-left border-collapse border border-gray-300 mt-4">
+  <thead class="bg-gray-200">
     <tr>
       <th class="px-4 py-2 border border-gray-300">Title</th>
       <th class="px-4 py-2 border border-gray-300">Start Date/Time</th>
       <th class="px-4 py-2 border border-gray-300">End Date/Time</th>
       <th class="px-4 py-2 border border-gray-300">Professor</th>
+      <th class="px-4 py-2 border border-gray-300">Classes</th>
+      <th class="px-4 py-2 border border-gray-300">Classrooms</th>
       <th class="px-4 py-2 border border-gray-300">Actions</th>
     </tr>
   </thead>
   <tbody>
+    <!-- Event Rows -->
     <tr *ngFor="let event of events" class="hover:bg-gray-100">
       <td class="px-4 py-2 border border-gray-300">{{ event.title }}</td>
       <td class="px-4 py-2 border border-gray-300">{{ event.startDateTime }}</td>
       <td class="px-4 py-2 border border-gray-300">{{ event.endDateTime }}</td>
-      
+      <td class="px-4 py-2 border border-gray-300">{{ event.professor.name }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ event.classe.name }}</td>
+      <td class="px-4 py-2 border border-gray-300">{{ event.classroom.number }}</td>
       <td class="px-4 py-2 border border-gray-300">
-        <button *ngIf="event.id !== undefined"  (click)="editEvent(event.id)" class="text-yellow-500">
+        <button *ngIf="event.id !== undefined" (click)="editEvent(event.id)" class="text-yellow-500 hover:text-yellow-600">
           <i class="fas fa-edit"></i>
         </button>
-        <button *ngIf="event.id !== undefined" (click)="deleteEvent(event.id)">
+        <button *ngIf="event.id !== undefined" (click)="deleteEvent(event.id)" class="text-red-500 hover:text-red-600 ml-2">
           <i class="fas fa-trash"></i>
         </button>
       </td>
     </tr>
 
-    <tr *ngIf="showAddEventForm"> <!-- Show form to add a new event -->
-      <td><input type="text" [(ngModel)]="newEvent.title" placeholder="Title" required /></td>
-      <td><input type="datetime-local" [(ngModel)]="newEvent.startDateTime" placeholder="Start Date/Time" required /></td>
-      <td><input type="datetime-local" [(ngModel)]="newEvent.endDateTime" placeholder="End Date/Time" required /></td>
+    <!-- Add Event Form -->
+    <tr *ngIf="showAddEventForm" class="bg-gray-100">
+      <td><input type="text" [(ngModel)]="newEvent.title" placeholder="Title" required class="border p-2 w-full" /></td>
       <td>
-        <select [(ngModel)]="newEvent.professorid" required>
+        <input type="datetime-local" [(ngModel)]="newEvent.startDateTime" required class="border p-2 w-full" />
+      </td>
+      <td>
+        <input type="datetime-local" [(ngModel)]="newEvent.endDateTime" required class="border p-2 w-full" />
+      </td>
+      <td>
+        <select [(ngModel)]="newEvent.professor.id" required class="border p-2 w-full">
           <option *ngFor="let professor of professors" [value]="professor.id">{{ professor.name }}</option>
         </select>
       </td>
       <td>
-        <button (click)="addEvent()" class="bg-green-400">Save</button>
-        <button (click)="toggleAddEventForm()" class="bg-red-400">Cancel</button>
+        <select [(ngModel)]="newEvent.classe.name" required class="border p-2 w-full">
+          <option *ngFor="let class of classes" [value]="class.number">{{ class.name }}</option>
+        </select>
+      </td>
+      <td>
+        <select [(ngModel)]="newEvent.classroom.number" required class="border p-2 w-full">
+          <option *ngFor="let class of classrooms" [value]="class.number">{{ class.number }}</option>
+        </select>
+      </td>
+      <td>
+        <button (click)="addEvent()" class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600">
+          <i class="fas fa-save"></i> Save
+        </button>
+        <button (click)="toggleAddEventForm()" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 ml-2">
+          <i class="fas fa-times"></i> Cancel
+        </button>
       </td>
     </tr>
   </tbody>

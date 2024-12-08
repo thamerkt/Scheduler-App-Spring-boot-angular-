@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Class } from '../class.model';
+import { Classe } from '../class.model';
 
 @Component({
   selector: 'app-classes',
@@ -8,9 +8,9 @@ import { Class } from '../class.model';
   styleUrls: ['./classes.component.css']
 })
 export class ClassesComponent implements OnInit {
-  classes: Class[] = [];
+  classes: Classe[] = [];
   showAddClasseForm = false; // Property to track visibility of the form
-  newClasse: Class = { id: 0, name: '', number: 0, section: '' }; // Initialize with blank professor
+  newClasse: Classe = { id: 0, name: '', number: 0, section: '' }; // Initialize with blank professor
 
   constructor(private dataService: DataService) {}
 
@@ -19,7 +19,7 @@ export class ClassesComponent implements OnInit {
   }
 
   loadClasses(): void {
-    this.dataService.getClasses().subscribe((data: Class[]) => {
+    this.dataService.getClasses().subscribe((data: Classe[]) => {
       this.classes = data;
     });
   }
@@ -31,13 +31,13 @@ export class ClassesComponent implements OnInit {
     // Validate input fields
     if (this.newClasse.name && this.newClasse.number && this.newClasse.section) {
       this.dataService.createClass(this.newClasse).subscribe(
-        (newClasse) => {
+        (newClasse: any) => {
           console.log('Class added:', this.newClasse); // Log the added professor
           this.classes.push(this.newClasse); // Add the new professor to the list
           this.resetNewClasse(); // Reset the form fields
           this.showAddClasseForm = false; // Hide the form after adding
         },
-        (error) => {
+        (error: any) => {
           console.error('Error adding professor:', error); // Log any errors
         }
       );

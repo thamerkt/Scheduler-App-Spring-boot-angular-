@@ -1,3 +1,56 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
+/* Container styling */
+.calendar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Event styling */
+.cal-event {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 2px 0;
+  font-size: 14px;
+  cursor: grab;
+}
+
+.cal-event:hover {
+  background-color: #0056b3;
+}
+
+/* Event title styling */
+.event-title {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Event info styling */
+.event-info {
+  font-size: 12px;
+  color: #f1f1f1;
+}
+
+/* Dragging effect */
+.cdk-drag-preview {
+  border: 1px dashed #ddd;
+  opacity: 0.8;
+}
+
+.cdk-drag-placeholder {
+  visibility: hidden;
+}
+
+.cdk-drag-dragging {
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+  
+

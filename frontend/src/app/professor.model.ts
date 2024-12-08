@@ -3,5 +3,6 @@ export interface Professor {
     name: string;
     email: string;
     subject: string;
+    cin:string
   }
   
