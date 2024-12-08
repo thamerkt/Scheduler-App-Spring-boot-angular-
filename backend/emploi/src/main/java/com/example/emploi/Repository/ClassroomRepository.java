@@ -9,6 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface ClassroomRepository extends JpaRepository<Classroom,Long> {
 
 
-
-
+    Classroom findByNumber(int number);
 }

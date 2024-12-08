@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e541dc22-edd4-44ff-b690-7ecf3ac4dfa6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/Config/ApplicationConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/Config/ApplicationConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/Repository/ClassRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/Repository/ClassRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/Repository/ClassroomRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/Repository/ClassroomRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/Repository/ProfessorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/Repository/ProfessorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/controller/EventController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/controller/ProfessorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/controller/ProfessorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/entity/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/emploi/src/main/java/com/example/emploi/entity/Event.java" afterDir="false" />
     </list>
@@ -36,18 +41,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.EmploiApplication.executor": "Run",
-    "JUnit.EmploiApplicationTests.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "back",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/thamer/Downloads/emploi/emploi/src/main/java/com/example/emploi",
-    "run.code.analysis.last.selected.profile": "pProject Default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.EmploiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EmploiApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;back&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/thamer/Downloads/emploi/emploi/src/main/java/com/example/emploi&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.example.emploi.repository" />
@@ -59,6 +64,26 @@
       <recent name="com.example.emploi.controller" />
       <recent name="com.example.emploi.entity" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="EmploiApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.emploi.EmploiApplication" />
+      <module name="emploi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.emploi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EmploiApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
